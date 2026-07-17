@@ -1,18 +1,18 @@
-# ✍️ AI Restaurant Blog Generator
+# ✍️ AI Blog Generator (Gemini)
 
-An AI-powered blog generation application built using **Python**, **Gradio**, and the **Groq API**. The application generates engaging restaurant and food blogs based on user inputs such as restaurant name, food topic, audience, writing tone, word count, and language. The generated blog can also be downloaded as a text file.
+An AI-powered Blog Generator built using **Python**, **Gradio**, and the **Google Gemini API**. This application generates well-structured blogs on any topic based on the user's preferences, including audience, writing tone, word count, and blog style.
 
 ---
 
 ## Features
 
-- 🍽️ Generate restaurant and food blogs instantly
-- 🤖 Powered by Groq's Llama 3.3 70B Versatile model
-- 🌍 Supports multiple languages
-- 🎭 Choose different writing tones
+- ✍️ Generate blogs on any topic
+- 🤖 Powered by Google Gemini 2.5 Flash
+- 👥 Customize the target audience
+- 🎭 Multiple writing tones
 - 📏 Adjustable blog length (200–1000 words)
-- 💾 Download the generated blog as a TXT file
-- 🌐 Simple Gradio web interface
+- 📰 Different blog styles (Informative, Storytelling, SEO-Friendly)
+- 🌐 Interactive Gradio web interface
 
 ---
 
@@ -20,35 +20,32 @@ An AI-powered blog generation application built using **Python**, **Gradio**, an
 
 - Python
 - Gradio
-- Groq API
-- Llama 3.3 70B Versatile
+- Google Gemini API (`google-genai`)
 
 ---
 
 ## Project Structure
 
 ```
-AI-Restaurant-Blog-Generator/
+AI-Blog-Generator/
 │
 ├── app.py
 ├── requirements.txt
-├── README.md
-└── generated_blogs/        (Optional)
+└── README.md
 ```
 
 ---
 
 ## Installation
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/AI-Restaurant-Blog-Generator.git
-
-cd AI-Restaurant-Blog-Generator
+git clone https://github.com/yourusername/AI-Blog-Generator.git
+cd AI-Blog-Generator
 ```
 
-### 2. Install the required packages
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -56,21 +53,15 @@ pip install -r requirements.txt
 
 ---
 
-## Configure the Groq API Key
+## Configure Gemini API Key
 
 Replace:
 
 ```python
-client = Groq(api_key="YOUR_GROQ_API_KEY")
+client = genai.Client(api_key="YOUR_API_KEY")
 ```
 
-with your own Groq API key.
-
-Example:
-
-```python
-client = Groq(api_key="YOUR_API_KEY")
-```
+with your own Gemini API key.
 
 ---
 
@@ -80,37 +71,57 @@ client = Groq(api_key="YOUR_API_KEY")
 python app.py
 ```
 
-Gradio will launch a local server, typically at:
+After running, Gradio will provide a local URL similar to:
 
 ```
 http://127.0.0.1:7860
 ```
 
-Open the URL in your browser.
+Open it in your web browser.
 
 ---
 
 ## How to Use
 
-1. Enter the restaurant name.
-2. Specify the food or topic.
-3. Select the target audience.
-4. Choose a writing tone.
-5. Adjust the desired word count.
-6. Select the output language.
-7. Click **Submit**.
-8. Read the generated blog and download it as a `.txt` file.
+1. Enter the blog topic.
+2. Specify the target audience.
+3. Select a writing tone.
+4. Choose the desired word count.
+5. Select a blog style.
+6. Click **Submit**.
+7. Read the generated blog.
 
 ---
 
-## Input Parameters
+## Inputs
 
-- **Restaurant Name** – Name of the restaurant.
-- **Food/Topic** – Dish or topic to focus on.
-- **Audience** – Intended readers (e.g., food lovers, tourists, families).
-- **Tone** – Professional, Casual, Funny, Technical, or Inspirational.
-- **Word Count** – 200 to 1000 words.
-- **Language** – English, Telugu, Hindi, Tamil, Kannada, Spanish, or French.
+- **Topic**
+- **Audience**
+- **Tone**
+  - Professional
+  - Casual
+  - Funny
+  - Sarcastic
+  - Sad
+  - Technical
+- **Word Count**
+  - 200–1000 words
+- **Blog Style**
+  - Informative
+  - Storytelling
+  - SEO-Friendly
+
+---
+
+## Blog Structure
+
+The generated blog includes:
+
+- Introduction
+- Fun Facts
+- Tips
+- Advantages
+- Conclusion
 
 ---
 
@@ -120,42 +131,27 @@ Open the URL in your browser.
 User Inputs
       │
       ▼
-Groq API
-(Llama 3.3 70B)
+Google Gemini API
       │
       ▼
 AI Generates Blog
       │
       ▼
-Display in Gradio
-      │
-      ▼
-Download as TXT File
+Displayed in Gradio Interface
 ```
 
 ---
 
-## Example Output
+## Future Enhancements
 
-A generated blog includes:
-
-- Restaurant introduction
-- Food description
-- Rating out of 5
-- Conclusion
-
----
-
-## Future Improvements
-
-- Add restaurant images
-- Export blogs as PDF or DOCX
-- SEO keyword optimization
+- Download blog as PDF or DOCX
+- Multi-language support
 - AI-generated blog titles
+- SEO keyword optimization
+- Grammar checking
+- Blog rewriting
+- Image generation for blogs
 - Social media caption generation
-- Blog editing and rewriting
-- Additional language support
-- Multiple AI model selection
 
 ---
 
@@ -169,4 +165,4 @@ B.Tech – Data Science
 
 ## License
 
-This project is developed for educational and learning purposes.
+This project is intended for educational and learning purposes.
